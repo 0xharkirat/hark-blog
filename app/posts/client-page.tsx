@@ -44,80 +44,92 @@ export default function PostsClientPage(props: ClientPostProps) {
   return (
     <ErrorBoundary>
       <Section>
-        <div className="container flex flex-col items-center gap-16">
-          <div className="text-center">
-            <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl">
-              Blog Posts
+        <div className="container flex flex-col items-center gap-16 py-12">
+          <div className="text-center space-y-4">
+            <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+              Latest Articles
+            </div>
+            <h2 className="mx-auto mb-6 text-pretty text-4xl font-bold tracking-tight md:text-5xl lg:max-w-3xl">
+              Tech Blog
             </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.
             </p>
           </div>
 
-          <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
-            {posts.map((post) => (
+          <div className="w-full space-y-12 lg:space-y-16">
+            {posts.map((post, index) => (
               <Card
                 key={post.id}
-                className="order-last border-0 bg-transparent shadow-none sm:order-first sm:col-span-12 lg:col-span-10 lg:col-start-2"
+                className="group relative overflow-hidden border border-border/50 bg-card shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/50"
               >
-                <div className="grid gap-y-6 sm:grid-cols-10 sm:gap-x-5 sm:gap-y-0 md:items-center md:gap-x-8 lg:gap-x-12">
-                  <div className="sm:col-span-5">
-                    <div className="mb-4 md:mb-6">
-                      <div className="flex flex-wrap gap-3 text-xs uppercase tracking-wider text-muted-foreground md:gap-5 lg:gap-6">
-                        {post.tags?.map((tag) => <span key={tag}>{tag}</span>)}
-                      </div>
+                <div className="grid gap-8 p-6 sm:grid-cols-12 sm:gap-10 md:items-center md:p-8 lg:gap-12 lg:p-10">
+                  <div className="sm:col-span-7 space-y-6">
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags?.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                    <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
+                    
+                    <h3 className="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">
                       <Link
                         href={post.url}
-                        className="hover:underline"
+                        className="hover:text-primary transition-colors"
                       >
                         {post.title}
                       </Link>
                     </h3>
-                    <div className="mt-4 text-muted-foreground md:mt-5">
+                    
+                    <div className="prose prose-gray max-w-none text-muted-foreground dark:prose-invert">
                       <TinaMarkdown content={post.excerpt} />
                     </div>
-                    <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">
-                      <Avatar>
+                    
+                    <div className="flex items-center gap-4 text-sm">
+                      <Avatar className="h-10 w-10 ring-2 ring-background shadow-md">
                         {post.author.avatar && (
                           <AvatarImage
                             src={post.author.avatar}
                             alt={post.author.name}
-                            className="h-8 w-8"
                           />
                         )}
-                        <AvatarFallback>
-                          <UserRound size={16} strokeWidth={2} className="opacity-60" aria-hidden="true" />
+                        <AvatarFallback className="bg-primary/10 text-primary">
+                          <UserRound size={18} strokeWidth={2} />
                         </AvatarFallback>
                       </Avatar>
-                      <span className="text-muted-foreground">{post.author.name}</span>
-                      <span className="text-muted-foreground">•</span>
-                      <span className="text-muted-foreground">
-                        {post.published}
-                      </span>
+                      <div className="flex flex-col">
+                        <span className="font-medium text-foreground">{post.author.name}</span>
+                        <span className="text-xs text-muted-foreground">{post.published}</span>
+                      </div>
                     </div>
-                    <div className="mt-6 flex items-center space-x-2 md:mt-8">
+                    
+                    <div className="pt-2">
                       <Link
                         href={post.url}
-                        className="inline-flex items-center font-semibold hover:underline md:text-base"
+                        className="inline-flex items-center gap-2 font-semibold text-primary transition-all hover:gap-3 hover:text-primary/80"
                       >
-                        <span>Read more</span>
-                        <ArrowRight className="ml-2 size-4 transition-transform" />
+                        <span>Read article</span>
+                        <ArrowRight className="size-5" />
                       </Link>
                     </div>
                   </div>
+                  
                   {post.heroImg && (
-                    <div className="order-first sm:order-last sm:col-span-5">
-                      <Link href={post.url} className="block">
-                        <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
+                    <div className="sm:col-span-5">
+                      <Link href={post.url} className="block group">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/50 bg-muted">
                           <Image
-                            width={533}
-                            height={300}
+                            width={600}
+                            height={450}
                             src={post.heroImg}
                             alt={post.title}
-                            className="h-full w-full object-cover transition-opacity duration-200 fade-in hover:opacity-70"
+                            className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-background/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                         </div>
                       </Link>
                     </div>
