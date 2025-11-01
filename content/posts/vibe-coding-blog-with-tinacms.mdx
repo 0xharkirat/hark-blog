@@ -1,0 +1,232 @@
+---
+title: How to Vibe Code Your Blog with TinaCMS & GitHub Copilot
+heroImg: ''
+excerpt: >
+  A step-by-step journey of building a modern tech blog using TinaCMS, Next.js, and GitHub Copilot - from zero to production-ready in minutes.
+author: content/authors/pedro.md
+date: 2025-11-01T00:00:00.000Z
+---
+
+Ever wanted to build a blog that's not just functional, but *beautiful* and *modern*? A blog where you can edit content visually, deploy anywhere, and have complete control over the design? Let me show you how I built **Tales of Hark** using TinaCMS and GitHub Copilot - and how you can do it too!
+
+## 🚀 What We Built
+
+A fully-featured tech blog with:
+- ✨ Modern, glassmorphic UI design
+- 🌓 Dark/Light mode toggle
+- 📝 Visual content editing with TinaCMS
+- 🎨 Custom red & amber color scheme
+- 📱 Fully responsive design
+- ⚡ Lightning-fast with Next.js 15 & Turbopack
+
+## Step 1: Project Setup
+
+First, we started with TinaCMS's Next.js starter template using `pnpm`:
+
+```bash
+# Create a new TinaCMS project
+pnpm dlx create-tina-app@latest hark-blog --template tina-cloud-starter
+
+# Navigate to the project
+cd hark-blog
+
+# Install dependencies
+pnpm install
+
+# Start the dev server
+pnpm dev
+```
+
+**Pro Tip**: TinaCMS requires an empty directory, so move any existing files temporarily during setup.
+
+The starter gives you:
+- 📦 **Next.js 15** with Turbopack for blazing-fast compilation
+- 🦙 **TinaCMS** with file-based content management
+- 🎨 **Tailwind CSS v4** for styling
+- 📊 **GraphQL API** for content queries
+
+## Step 2: Modern Tech Blog Aesthetic
+
+This is where GitHub Copilot really shined! We transformed the default blog into a modern masterpiece.
+
+### Color System Overhaul
+
+We rebuilt the entire color system using `oklch()` color space for better consistency across light and dark modes:
+
+```css
+:root {
+  /* Light mode - Clean white with red accent */
+  --primary: oklch(0.55 0.22 25);
+  --secondary: oklch(0.95 0.05 60);
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.15 0 0);
+}
+
+.dark {
+  /* Dark mode - Deep charcoal with vibrant accents */
+  --primary: oklch(0.65 0.25 25);
+  --secondary: oklch(0.25 0.03 60);
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.95 0 0);
+}
+```
+
+**Why oklch()?** It provides perceptually uniform colors that look consistent across different lightness levels - perfect for dark mode!
+
+### Custom Utility Classes
+
+We added custom CSS utilities for that modern tech blog feel:
+
+```css
+/* Gradient text effect */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary via-purple-500 to-pink-500 
+         bg-clip-text text-transparent;
+}
+
+/* Frosted glass effect */
+.glass {
+  @apply backdrop-blur-md bg-background/50 border border-border/50;
+}
+
+/* Card hover animation */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg 
+         hover:shadow-primary/10 hover:-translate-y-1;
+}
+```
+
+## Step 3: Header Redesign
+
+The navigation header got a complete makeover with:
+
+**Frosted Glass Effect**:
+```tsx
+<header className="sticky top-0 z-50 w-full border-b border-border/40 
+                   backdrop-blur-xl bg-background/80 shadow-sm">
+```
+
+**Theme Toggle Integration**:
+We integrated `next-themes` for seamless dark/light mode switching with a custom ThemeToggle component.
+
+**Animated Navigation Links**:
+```tsx
+<Link 
+  href="/about" 
+  className="transition-colors hover:text-primary relative 
+             after:absolute after:bottom-0 after:left-0 after:h-0.5 
+             after:w-0 after:bg-primary after:transition-all 
+             hover:after:w-full"
+>
+  About
+</Link>
+```
+
+## Step 4: Enhanced Components
+
+### Hero Section
+
+The hero section got major upgrades:
+
+1. **Gradient Background Effect** - Subtle animated background with custom clip paths
+2. **Text Animation Effects** - Smooth fade-in blur animations using TextEffect component
+3. **Enhanced Button Styling** - Buttons with shadow effects and hover animations
+
+### Blog Post Cards
+
+The post listing page features modern card designs with:
+- Featured images with zoom effects on hover
+- Gradient badges for tags
+- Author avatars and metadata
+- Smooth transition animations
+
+## Step 5: Personalization
+
+### Site Branding
+
+We updated the global configuration with:
+- Site name: "Tales of Hark"
+- Custom icon: BiBookHeart in red
+- Social media links (Twitter, GitHub, LinkedIn, YouTube)
+- "Powered by TinaCMS" footer credit
+
+### Custom Favicon
+
+We created custom favicons using Next.js's dynamic icon generation with a red gradient "H" logo.
+
+### Home Page Content
+
+Updated the hero section with personal tagline:
+
+```yaml
+headline: Harkirat Singh
+tagline: |
+  I cook with TinaCMS (the best CMS)
+  & build great software at SSW
+```
+
+## Step 6: The Red Theme
+
+We chose a vibrant red and amber color scheme for energy and warmth:
+
+**Light Mode**:
+- Primary: `oklch(0.55 0.22 25)` - Vibrant red
+- Secondary: `oklch(0.95 0.05 60)` - Subtle amber
+- Background: `oklch(0.99 0 0)` - Clean white
+
+**Dark Mode**:
+- Primary: `oklch(0.65 0.25 25)` - Brighter red for contrast
+- Secondary: `oklch(0.25 0.03 60)` - Deep amber
+- Background: `oklch(0.12 0 0)` - Deep charcoal
+
+This creates a warm, energetic palette perfect for a tech blog!
+
+## Step 7: About Page
+
+Created a comprehensive about page with:
+- Personal bio and journey through FireBootCamp at SSW
+- Technical expertise (Flutter, Firebase, Supabase, Angular, .NET, DevOps, Web3)
+- Personal interests (YouTube channel, tabla playing, love for conversation)
+
+## 🎯 Key Takeaways
+
+**What Worked Well**:
+1. **TinaCMS** - Visual editing is amazing for content management
+2. **GitHub Copilot** - Accelerated development with smart suggestions
+3. **Next.js 15 + Turbopack** - Lightning-fast compilation and hot reload
+4. **Tailwind CSS v4** - Powerful utility-first styling with custom properties
+5. **oklch() colors** - Consistent colors across light/dark modes
+
+**Pro Tips**:
+- Use YAML multiline syntax (`|`) for multi-line text fields
+- Leverage CSS custom properties for theme consistency
+- Add transition animations for better UX
+- Test both light and dark modes thoroughly
+- Keep color contrast ratios accessible (WCAG AA)
+
+## 🚀 Next Steps
+
+Want to build your own? Here's what to do next:
+
+1. **Clone and Customize**: Start with the TinaCMS starter
+2. **Design Your Theme**: Pick your color scheme and aesthetic
+3. **Add Your Content**: Write your first blog post
+4. **Deploy**: Push to Vercel, Netlify, or your preferred host
+5. **Connect TinaCloud**: Enable visual editing for non-technical users
+
+## 📚 Resources
+
+- [TinaCMS Documentation](https://tina.io/docs/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com)
+- [oklch() Color Space](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
+
+---
+
+**Building a blog has never been this fun!** With TinaCMS and GitHub Copilot, you can vibe code your way to a production-ready blog in hours, not days. The combination of visual editing, modern styling, and AI-assisted development makes it an absolute joy to build.
+
+Ready to start your own blogging journey? Let's vibe code! 🎉
+
+---
+
+*Have questions or want to share your own TinaCMS blog? Hit me up on [Twitter](https://twitter.com/talesofhark) or check out my [YouTube channel](https://www.youtube.com/@talesofhark) for more tutorials!*
