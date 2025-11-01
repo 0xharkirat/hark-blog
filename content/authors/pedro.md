@@ -1,4 +1,4 @@
 ---
-name: Pedro
-avatar: /uploads/authors/pedro.webp
+name: Harkirat Singh
+avatar: /uploads/authors/harkirat.svg
 ---
