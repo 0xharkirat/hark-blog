@@ -2,7 +2,9 @@
 title: How to Vibe Code Your Blog with TinaCMS & GitHub Copilot
 heroImg: ''
 excerpt: >
-  A step-by-step journey of building a modern tech blog using TinaCMS, Next.js, and GitHub Copilot - from zero to production-ready in minutes. Real prompts, real results, real lessons learned.
+  A step-by-step journey of building a modern tech blog using TinaCMS, Next.js,
+  and GitHub Copilot - from zero to production-ready in minutes. Real prompts,
+  real results, real lessons learned.
 author: content/authors/pedro.md
 date: 2025-11-01T00:00:00.000Z
 ---
@@ -12,6 +14,7 @@ Ever wanted to build a blog that's not just functional, but *beautiful* and *mod
 ## 🚀 The Complete Journey
 
 ### Prompt 1: The Setup (The Smart Way)
+
 ```
 Act as a TinaCMS expert and use the official Tina documentation 
 as reference.
@@ -41,6 +44,7 @@ I already have a folder called hark-blog opened in VS Code.
 **💡 Key Insight**: Asking AI to act as an expert and reference official docs ensures accurate, up-to-date implementation.
 
 ### Prompt 2: The Correction
+
 ```
 no need to use telemetry i think you should check -h flag to 
 see the current supported flags
@@ -51,6 +55,7 @@ see the current supported flags
 **💡 Key Insight**: Always verify CLI commands. AI might suggest outdated flags - ask it to check help documentation.
 
 ### Prompt 3: The Big Transformation
+
 ```
 I want to move ahead & change the styling.
 
@@ -58,15 +63,17 @@ Make it look like tech blog aesthetic.
 ```
 
 **Result**: Complete redesign! Copilot:
-- Rebuilt entire color system using `oklch()` for consistent light/dark modes
-- Added custom utility classes (`.gradient-text`, `.glass`, `.card-hover`)
-- Enhanced header with frosted glass backdrop-blur effect
-- Added theme toggle with smooth transitions
-- Implemented modern card designs for blog posts
+
+* Rebuilt entire color system using `oklch()` for consistent light/dark modes
+* Added custom utility classes (`.gradient-text`, `.glass`, `.card-hover`)
+* Enhanced header with frosted glass backdrop-blur effect
+* Added theme toggle with smooth transitions
+* Implemented modern card designs for blog posts
 
 **💡 Key Insight**: High-level prompts like "tech blog aesthetic" work because AI understands design patterns and can implement comprehensive changes.
 
 ### Prompt 4: Personalization
+
 ```
 Now let's add content specifically for me.
 
@@ -84,15 +91,17 @@ github: 0xharkirat
 youtube: talesofhark
 ```
 
-**Result**: 
-- Clean hero section with proper formatting
-- Removed extra content blocks
-- Updated all social links across footer
-- Maintained navigation and footer structure
+**Result**:
+
+* Clean hero section with proper formatting
+* Removed extra content blocks
+* Updated all social links across footer
+* Maintained navigation and footer structure
 
 **💡 Key Insight**: Be specific with names, links, and structure. List exactly what to keep and what to remove.
 
 ### Prompt 5: Branding Overhaul
+
 ```
 you are doing a great work. keep it up. 
 
@@ -109,31 +118,37 @@ I really like the styling
 ```
 
 **Result**:
-- Changed site title to "Tales of Hark" everywhere
-- Created custom red gradient "H" favicon (SVG-based)
-- Removed tina.svg and all Tina branding
-- Kept "Powered by TinaCMS" credit in footer
-- Prepared for color scheme change
 
-**💡 Key Insight**: 
+* Changed site title to "Tales of Hark" everywhere
+* Created custom red gradient "H" favicon (SVG-based)
+* Removed tina.svg and all Tina branding
+* Kept "Powered by TinaCMS" credit in footer
+* Prepared for color scheme change
+
+**💡 Key Insight**:
+
 1. Positive reinforcement helps maintain direction ("you are doing great work")
 2. Preview next steps so AI can prepare ("in the next step we will...")
 3. State what you like so AI preserves it ("I really like the styling")
 
 ### Prompt 6: Color Revolution
+
 ```
 Ok, I like what you are doing. Good stuff.
 ```
+
 *(Proceeded with red color scheme change)*
 
 **Result**: Transformed entire palette from blue to vibrant red with amber accents:
-- Light mode: `oklch(0.55 0.22 25)` red primary
-- Dark mode: `oklch(0.65 0.25 25)` brighter red for contrast
-- Secondary: Warm amber tones for complementary warmth
+
+* Light mode: `oklch(0.55 0.22 25)` red primary
+* Dark mode: `oklch(0.65 0.25 25)` brighter red for contrast
+* Secondary: Warm amber tones for complementary warmth
 
 **💡 Key Insight**: When changing color schemes, oklch() color space maintains perceptual consistency across light/dark modes.
 
 ### Prompt 7: The Polish - Line Breaks
+
 ```
 Ok, I like what you are doing. Good stuff.
 
@@ -147,28 +162,33 @@ great software at SSW.
 **💡 Key Insight**: Be specific about UI issues. "looks weird" + explanation of the problem = quick fix.
 
 ### Prompt 8: Image Cleanup
+
 ```
 ther is some empty image in the home page, either remove it or 
 tell me where I can put in image so that It shows nice image 
 of me
 ```
 
-**Result**: 
-- Removed empty image section
-- Provided clear instructions on adding personal image later
+**Result**:
+
+* Removed empty image section
+* Provided clear instructions on adding personal image later
 
 **💡 Key Insight**: Give AI options ("either remove it or tell me...") when you're flexible about the solution.
 
 ### Additional Prompts That Completed the Journey
 
 **Prompt 9**: About Page
+
 ```
 alright, let's move to about page. I want to remove everything 
 and add a nice about page about me
 ```
+
 Then provided complete bio with SSW FireBootCamp journey, technical skills, and personal interests.
 
 **Prompt 10**: The Blog Post
+
 ```
 now for the blogs, remove everything & create a new blog post
 
@@ -178,6 +198,7 @@ Write down everything what you have done so far in the blog post.
 ```
 
 **Prompt 11**: Theme Consistency
+
 ```
 now the blog post is there but the theme is not matching with 
 the current theme, why the blue colored headline, also the blog 
@@ -185,18 +206,21 @@ post is nearly unreadable in the dark mode
 ```
 
 **Prompt 12**: Author Update
+
 ```
 great work, let's update the author name to myself, also change 
 the author image to H which is svg
 ```
 
 **Prompt 13**: Cleanup
+
 ```
 carefully remove the other blog posts, so that my blog doesn't 
 crash on /blogs route
 ```
 
 **Prompt 14**: Final Fix
+
 ```
 now the problem is on about page text not visible in dark mode
 ```
@@ -204,41 +228,49 @@ now the problem is on about page text not visible in dark mode
 ## ⚠️ Common Pitfalls to Avoid
 
 ### 1. **Directory Issues**
+
 **Problem**: TinaCMS requires an empty directory for setup
 **Solution**: Move existing files temporarily, then restore after setup
 **Lesson**: Always check tool requirements before running setup commands
 
 ### 2. **Outdated CLI Flags**
+
 **Problem**: AI might suggest flags that don't exist (`--skipTelemetry`)
 **Solution**: Ask AI to check help documentation (`-h` flag)
 **Lesson**: Verify CLI commands, especially for rapidly evolving tools
 
 ### 3. **Cache Problems**
+
 **Problem**: Getting errors like "Unable to find record" after content changes
 **Solution**: Delete `.next` and `.tina/__generated__` folders, restart dev server
 **Lesson**: When TinaCMS acts weird, clear generated files and rebuild
 
 ### 4. **Color Consistency Issues**
+
 **Problem**: Colors look different in light/dark mode
 **Solution**: Use `oklch()` color space instead of RGB/HSL
 **Lesson**: Modern color spaces solve old problems - learn new CSS features!
 
 ### 5. **Prose Styling Conflicts**
+
 **Problem**: Dark mode text becomes invisible
 **Solution**: Use `dark:prose-invert` and explicit color classes
 **Lesson**: Tailwind's prose plugin needs explicit dark mode configuration
 
 ### 6. **Git Detached HEAD**
+
 **Problem**: After checking out commits, in detached HEAD state
 **Solution**: Checkout specific commit hash or create new branch
 **Lesson**: Be careful with git operations during development
 
 ### 7. **Port Conflicts**
+
 **Problem**: "Tina Dev server is already in use. Datalayer server is busy on port 9000"
 **Solution**: Kill existing processes on ports 3000, 4001, 9000
 **Lesson**: Always clean up dev servers before restarting
 
 ### 8. **File Reference Errors**
+
 **Problem**: Blog post crashes because author file doesn't match
 **Solution**: Ensure author paths match exactly (`content/authors/pedro.md`)
 **Lesson**: TinaCMS uses exact file references - typos break things
@@ -248,101 +280,125 @@ now the problem is on about page text not visible in dark mode
 ### Prompt Engineering Best Practices
 
 **1. Set Context First**
+
 ```
 Act as a [X] expert and use official [Y] documentation as reference
 ```
+
 This primes AI to think like an expert and seek authoritative sources.
 
 **2. Break Complex Tasks into Steps**
+
 ```
 0. Create instructions.md to track progress
 1. Set up project
 2. Install dependencies
 3. Start dev server
 ```
+
 Numbered steps help AI understand sequence and dependencies.
 
 **3. Specify Non-Interactive Requirements**
+
 ```
 Generate the full command with proper flags so it runs 
 non-interactively (no manual input needed)
 ```
+
 Prevents AI from creating commands that pause for user input.
 
 **4. Give Positive Reinforcement**
+
 ```
 you are doing a great work. keep it up.
 ```
+
 Helps maintain the AI's direction and approach.
 
 **5. Preview Future Steps**
+
 ```
 in the next step we will change the site theme to use red...
 ```
+
 Allows AI to prepare and make compatible choices now.
 
 **6. State What You Like**
+
 ```
 I really like the styling
 ```
+
 Tells AI what to preserve during changes.
 
 **7. Be Specific About Problems**
+
 ```
 The hero section subtitle looks very weird, One line for 
 I cook with TinaCMS (the best CMS) and Next line I build 
 great software at SSW.
 ```
+
 Don't just say "fix it" - explain what's wrong and what you expect.
 
 **8. Provide Options When Flexible**
+
 ```
 either remove it or tell me where I can put in image
 ```
+
 Gives AI room to suggest the best solution.
 
 ### Development Workflow Tips
 
 **1. Track Progress**
-- Use instructions.md or similar to document steps
-- Makes it easy to resume if interrupted
-- Creates documentation for future reference
+
+* Use instructions.md or similar to document steps
+* Makes it easy to resume if interrupted
+* Creates documentation for future reference
 
 **2. Iterate Quickly**
-- Make changes → See results → Refine
-- Don't try to perfect everything in one prompt
-- Vibe coding is about rapid iteration
+
+* Make changes → See results → Refine
+* Don't try to perfect everything in one prompt
+* Vibe coding is about rapid iteration
 
 **3. Trust but Verify**
-- AI is smart, but check critical outputs
-- Verify CLI commands before running
-- Test dark/light modes, responsive design
+
+* AI is smart, but check critical outputs
+* Verify CLI commands before running
+* Test dark/light modes, responsive design
 
 **4. Clear Cache When Stuck**
-- Delete `.next` folder
-- Remove `.tina/__generated__`
-- Restart dev server fresh
+
+* Delete `.next` folder
+* Remove `.tina/__generated__`
+* Restart dev server fresh
 
 **5. Commit Frequently**
-- Small, focused commits
-- Makes it easy to rollback if needed
-- Tracks what each prompt accomplished
+
+* Small, focused commits
+* Makes it easy to rollback if needed
+* Tracks what each prompt accomplished
 
 ### Content Strategy
 
 **1. Start with Structure**
-- Navigation → Hero → Content → Footer
-- Get the skeleton right before styling
+
+* Navigation → Hero → Content → Footer
+* Get the skeleton right before styling
 
 **2. Content Before Polish**
-- Add your personal info first
-- Then refine styling and colors
-- Easier to see what works with real content
+
+* Add your personal info first
+* Then refine styling and colors
+* Easier to see what works with real content
 
 **3. Test Incrementally**
-- Check after each major change
-- Don't stack 10 changes and debug later
-- Faster to fix issues immediately
+
+* Check after each major change
+* Don't stack 10 changes and debug later
+* Faster to fix issues immediately
 
 ## 🎯 Key Learnings
 
@@ -350,36 +406,41 @@ Gives AI room to suggest the best solution.
 
 **1. High-Level Prompts**
 "Make it look like tech blog aesthetic" worked because:
-- AI understands design patterns
-- Can implement comprehensive changes
-- Faster than micromanaging every detail
+
+* AI understands design patterns
+* Can implement comprehensive changes
+* Faster than micromanaging every detail
 
 **2. Specific Corrections**
 "text not visible in dark mode" worked because:
-- Clear problem statement
-- Specific context (dark mode)
-- Easy to verify the fix
+
+* Clear problem statement
+* Specific context (dark mode)
+* Easy to verify the fix
 
 **3. Context Setting**
 "Act as a TinaCMS expert" worked because:
-- Primes AI to access relevant knowledge
-- Encourages checking official docs
-- Produces more accurate results
+
+* Primes AI to access relevant knowledge
+* Encourages checking official docs
+* Produces more accurate results
 
 ### The Tech Stack
 
 **Why These Tools?**
-- **TinaCMS** - Git-based CMS, visual editing, no database needed
-- **Next.js 15** - React framework with amazing performance
-- **Turbopack** - Lightning-fast compilation (8.7s → instant HMR)
-- **Tailwind CSS v4** - Utility-first, with CSS custom properties
-- **oklch() colors** - Perceptually uniform colors for perfect themes
-- **pnpm** - Fast, disk-efficient package manager
-- **GitHub Copilot** - AI that actually understands web development
+
+* **TinaCMS** - Git-based CMS, visual editing, no database needed
+* **Next.js 15** - React framework with amazing performance
+* **Turbopack** - Lightning-fast compilation (8.7s → instant HMR)
+* **Tailwind CSS v4** - Utility-first, with CSS custom properties
+* **oklch() colors** - Perceptually uniform colors for perfect themes
+* **pnpm** - Fast, disk-efficient package manager
+* **GitHub Copilot** - AI that actually understands web development
 
 ## 🎨 The Final Design System
 
 **Color Palette**
+
 ```css
 /* Light Mode */
 --primary: oklch(0.55 0.22 25);      /* Vibrant red */
@@ -395,6 +456,7 @@ Gives AI room to suggest the best solution.
 ```
 
 **Custom Utilities**
+
 ```css
 .gradient-text    /* Rainbow gradient text */
 .glass            /* Frosted glass effect */
@@ -403,53 +465,58 @@ Gives AI room to suggest the best solution.
 ```
 
 **Components Enhanced**
-- Header with backdrop-blur frosted glass
-- Theme toggle with sun/moon icons
-- Hero with gradient background effects
-- Blog cards with hover animations
-- Prose styling for perfect readability
+
+* Header with backdrop-blur frosted glass
+* Theme toggle with sun/moon icons
+* Hero with gradient background effects
+* Blog cards with hover animations
+* Prose styling for perfect readability
 
 ## 🌟 The Results
 
 **From Zero to Production in One Session:**
-- ✅ Modern glassmorphic UI design
-- ✅ Perfect dark/light mode support
-- ✅ Custom red & amber branding
-- ✅ Personal content throughout
-- ✅ One detailed blog post (this one!)
-- ✅ Professional about page
-- ✅ Fully responsive design
-- ✅ Lightning-fast performance
+
+* ✅ Modern glassmorphic UI design
+* ✅ Perfect dark/light mode support
+* ✅ Custom red & amber branding
+* ✅ Personal content throughout
+* ✅ One detailed blog post (this one!)
+* ✅ Professional about page
+* ✅ Fully responsive design
+* ✅ Lightning-fast performance
 
 **Time Investment:**
-- Setup: 5 minutes
-- Styling transformation: 15 minutes
-- Content & personalization: 20 minutes
-- Refinements & bug fixes: 20 minutes
-- **Total: ~1 hour** 🚀
+
+* Setup: 5 minutes
+* Styling transformation: 15 minutes
+* Content & personalization: 20 minutes
+* Refinements & bug fixes: 20 minutes
+* **Total: \~1 hour** 🚀
 
 ## 📚 Resources
 
-- [TinaCMS Documentation](https://tina.io/docs/)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [GitHub Copilot](https://github.com/features/copilot)
-- [oklch() Color Space](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
-- [Tailwind CSS v4](https://tailwindcss.com)
-- [Motion Primitives](https://motion-primitives.com/)
+* [TinaCMS Documentation](https://tina.io/docs/)
+* [Next.js Documentation](https://nextjs.org/docs)
+* [GitHub Copilot](https://github.com/features/copilot)
+* [oklch() Color Space](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
+* [Tailwind CSS v4](https://tailwindcss.com)
+* [Motion Primitives](https://motion-primitives.com/)
 
----
+***
 
 ## 🎓 Final Thoughts
 
 **Building a blog has never been this fun!** The combination of:
-- TinaCMS's visual editing
-- Next.js's performance  
-- GitHub Copilot's intelligence
-- Good prompting techniques
+
+* TinaCMS's visual editing
+* Next.js's performance
+* GitHub Copilot's intelligence
+* Good prompting techniques
 
 ...makes it possible to vibe code your way to a production-ready blog in about an hour.
 
 **The Secret Formula:**
+
 1. Set clear context ("Act as expert")
 2. Break tasks into steps
 3. Use high-level prompts first
@@ -459,23 +526,24 @@ Gives AI room to suggest the best solution.
 7. Have fun! 🎉
 
 **Remember:**
-- Good prompts > Perfect prompts
-- Iteration > Perfection
-- Progress > Planning
-- Shipping > Styling
 
-Ready to start your own blogging journey? Open VS Code, fire up GitHub Copilot, and start vibe coding! 
+* Good prompts > Perfect prompts
+* Iteration > Perfection
+* Progress > Planning
+* Shipping > Styling
 
----
+Ready to start your own blogging journey? Open VS Code, fire up GitHub Copilot, and start vibe coding!
+
+***
 
 *Want to see more? Check out my [YouTube channel](https://www.youtube.com/@talesofhark) for tutorials, or hit me up on [Twitter](https://twitter.com/talesofhark) to share your own vibe coding stories!*
 
 *Building something cool? I'd love to hear about it. Let's connect on [LinkedIn](https://www.linkedin.com/in/talesofhark) too!*
 
-
 ## 🚀 The Journey
 
 ### Prompt 1: Project Setup
+
 ```
 Set up a new Tina project inside the current folder using the 
 Next.js starter (tina-cloud-starter) template and pnpm as the 
@@ -485,6 +553,7 @@ package manager
 **Result**: GitHub Copilot set up the entire TinaCMS project with Next.js 15, Turbopack, and Tailwind CSS v4.
 
 ### Prompt 2: The Big Transformation
+
 ```
 Make it look like tech blog aesthetic
 ```
@@ -492,6 +561,7 @@ Make it look like tech blog aesthetic
 **Result**: Complete redesign! Copilot rebuilt the entire color system using `oklch()` colors, added custom utility classes for gradients, frosted glass effects, and modern animations.
 
 ### Prompt 3: Commitment to the Vision
+
 ```
 I want to move ahead & change the styling
 ```
@@ -499,6 +569,7 @@ I want to move ahead & change the styling
 **Result**: Copilot enhanced the header with backdrop-blur effects, added theme toggle functionality, and implemented smooth navigation animations.
 
 ### Prompt 4: Personalization
+
 ```
 Now let's add content specifically for me... Name: Harkirat Singh, 
 subtitle as I cook with TinaCMS (the best CMS), & build great 
@@ -508,6 +579,7 @@ software at SSW
 **Result**: Updated the home page hero section with my name and tagline, plus added my social media links across the site.
 
 ### Prompt 5: Branding
+
 ```
 let's change the site title & logo text to say Tales of Hark. 
 Also I need to remove any tina branding like tina logo, favicon 
@@ -517,6 +589,7 @@ Also I need to remove any tina branding like tina logo, favicon
 **Result**: Complete rebranding - custom "H" favicon with red gradient, updated all references to "Tales of Hark", removed Tina logo, kept the credit in footer.
 
 ### Prompt 6: Color Revolution
+
 ```
 in the next step we will change the site theme to use red as 
 primary color instead & some other relevant secondary color
@@ -525,6 +598,7 @@ primary color instead & some other relevant secondary color
 **Result**: Transformed the entire color palette from blue to red with amber accents. Perfect for that energetic tech blog vibe!
 
 ### Prompt 7: Hero Polish
+
 ```
 The hero section subtitle looks very weird, One line for 
 I cook with TinaCMS (the best CMS) and Next line I build 
@@ -534,6 +608,7 @@ great software at SSW.
 **Result**: Fixed the tagline formatting using YAML multiline syntax for proper line breaks.
 
 ### Prompt 8: Image Cleanup
+
 ```
 there is some empty image in the home page, either remove it 
 or tell me where I can put in image so that It shows nice 
@@ -543,19 +618,22 @@ image of me
 **Result**: Removed the empty image placeholder and got clear instructions on how to add a personal image later.
 
 ### Prompt 9: About Page
+
 ```
 alright, let's move to about page. I want to remove everything 
 and add a nice about page about me
 ```
 
 Then provided my full bio including:
-- Journey through SSW FireBootCamp
-- Technical expertise (Flutter, Firebase, Supabase, Angular, .NET)
-- Personal interests (YouTube, tabla, being talkative!)
+
+* Journey through SSW FireBootCamp
+* Technical expertise (Flutter, Firebase, Supabase, Angular, .NET)
+* Personal interests (YouTube, tabla, being talkative!)
 
 **Result**: Beautiful about page with all my info, properly formatted with sections and a quote.
 
 ### Prompt 10: The Blog Post
+
 ```
 now for the blogs, remove everything & create a new blog post
 
@@ -567,6 +645,7 @@ Write down everything what you have done so far in the blog post.
 **Result**: The post you're reading right now! 🎉
 
 ### Prompt 11: Theme Consistency
+
 ```
 now the blog post is there but the theme is not matching with 
 the current theme, why the blue colored headline, also the blog 
@@ -576,6 +655,7 @@ post is nearly unreadable in the dark mode
 **Result**: Fixed blog post styling to use red theme and made dark mode text perfectly readable with proper contrast.
 
 ### Prompt 12: Author Details
+
 ```
 great work, let's update the author name to myself, also change 
 the author image to H which is svg
@@ -584,6 +664,7 @@ the author image to H which is svg
 **Result**: Created custom SVG avatar with red gradient "H" and updated author to Harkirat Singh.
 
 ### Prompt 13: Clean Slate
+
 ```
 carefully remove the other blog posts, so that my blog doesn't 
 crash on /blogs route
@@ -592,6 +673,7 @@ crash on /blogs route
 **Result**: Safely removed all demo posts one by one, keeping only this post.
 
 ### Prompt 14: Final Polish
+
 ```
 now the problem is on about page text not visible in dark mode
 ```
@@ -601,12 +683,14 @@ now the problem is on about page text not visible in dark mode
 ## 🎯 What I Learned
 
 **The Power of Vibe Coding**:
-- Start with high-level prompts like "make it look like a tech blog"
-- GitHub Copilot understands design intent and implements it
-- Iterate with specific feedback: "text not visible in dark mode"
-- Trust the AI, but verify the results
+
+* Start with high-level prompts like "make it look like a tech blog"
+* GitHub Copilot understands design intent and implements it
+* Iterate with specific feedback: "text not visible in dark mode"
+* Trust the AI, but verify the results
 
 **Key Takeaways**:
+
 1. **TinaCMS** - Visual content editing is incredible
 2. **Next.js 15 + Turbopack** - Lightning fast development
 3. **oklch() colors** - Perfect for consistent themes
@@ -616,12 +700,13 @@ now the problem is on about page text not visible in dark mode
 ## 🚀 The Tech Stack
 
 What we built with:
-- **TinaCMS** - File-based CMS with visual editing
-- **Next.js 15** - React framework with Turbopack
-- **Tailwind CSS v4** - Utility-first styling
-- **next-themes** - Dark/light mode support
-- **pnpm** - Fast, efficient package manager
-- **GitHub Copilot** - AI-powered development
+
+* **TinaCMS** - File-based CMS with visual editing
+* **Next.js 15** - React framework with Turbopack
+* **Tailwind CSS v4** - Utility-first styling
+* **next-themes** - Dark/light mode support
+* **pnpm** - Fast, efficient package manager
+* **GitHub Copilot** - AI-powered development
 
 ## 💡 Pro Tips for Vibe Coding
 
@@ -634,6 +719,7 @@ What we built with:
 ## 🎨 The Design System
 
 **Colors** (in oklch):
+
 ```css
 /* Light Mode */
 --primary: oklch(0.55 0.22 25);      /* Vibrant red */
@@ -647,261 +733,30 @@ What we built with:
 ```
 
 **Custom Utilities**:
-- `.gradient-text` - Rainbow gradient text effect
-- `.glass` - Frosted glass background
-- `.card-hover` - Smooth card lift animation
-- `.tech-border` - Red accent border
+
+* `.gradient-text` - Rainbow gradient text effect
+* `.glass` - Frosted glass background
+* `.card-hover` - Smooth card lift animation
+* `.tech-border` - Red accent border
 
 ## 🌟 The Results
 
 From zero to a fully-functional, beautifully designed blog in one session:
-- ✅ Modern glassmorphic UI
-- ✅ Perfect dark/light mode support
-- ✅ Custom red & amber color scheme
-- ✅ Personal branding throughout
-- ✅ One killer blog post (this one!)
-- ✅ Professional about page
-- ✅ Responsive design
-- ✅ Fast performance with Turbopack
+
+* ✅ Modern glassmorphic UI
+* ✅ Perfect dark/light mode support
+* ✅ Custom red & amber color scheme
+* ✅ Personal branding throughout
+* ✅ One killer blog post (this one!)
+* ✅ Professional about page
+* ✅ Responsive design
+* ✅ Fast performance with Turbopack
 
 ## 📚 Resources
 
-- [TinaCMS Documentation](https://tina.io/docs/)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [GitHub Copilot](https://github.com/features/copilot)
-- [oklch() Color Space](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
-
----
-
-**Building a blog has never been this fun!** The combination of TinaCMS's visual editing, Next.js's performance, and GitHub Copilot's intelligence makes it possible to vibe code your way to a production-ready blog in hours.
-
-The secret? Good prompts, clear intent, and iterative refinement. Start with the vision, let Copilot build it, then polish with specific feedback.
-
-Ready to start your own blogging journey? Just tell Copilot what you want. Let's vibe code! 🎉
-
----
-
-*Want to see more? Check out my [YouTube channel](https://www.youtube.com/@talesofhark) for tutorials, or hit me up on [Twitter](https://twitter.com/talesofhark) to share your own vibe coding stories!*
-
-
-## 🚀 What We Built
-
-A fully-featured tech blog with:
-- ✨ Modern, glassmorphic UI design
-- 🌓 Dark/Light mode toggle
-- 📝 Visual content editing with TinaCMS
-- 🎨 Custom red & amber color scheme
-- 📱 Fully responsive design
-- ⚡ Lightning-fast with Next.js 15 & Turbopack
-
-## Step 1: Project Setup
-
-First, we started with TinaCMS's Next.js starter template using `pnpm`:
-
-```bash
-# Create a new TinaCMS project
-pnpm dlx create-tina-app@latest hark-blog --template tina-cloud-starter
-
-# Navigate to the project
-cd hark-blog
-
-# Install dependencies
-pnpm install
-
-# Start the dev server
-pnpm dev
-```
-
-**Pro Tip**: TinaCMS requires an empty directory, so move any existing files temporarily during setup.
-
-The starter gives you:
-- 📦 **Next.js 15** with Turbopack for blazing-fast compilation
-- 🦙 **TinaCMS** with file-based content management
-- 🎨 **Tailwind CSS v4** for styling
-- 📊 **GraphQL API** for content queries
-
-## Step 2: Modern Tech Blog Aesthetic
-
-This is where GitHub Copilot really shined! We transformed the default blog into a modern masterpiece.
-
-### Color System Overhaul
-
-We rebuilt the entire color system using `oklch()` color space for better consistency across light and dark modes:
-
-```css
-:root {
-  /* Light mode - Clean white with red accent */
-  --primary: oklch(0.55 0.22 25);
-  --secondary: oklch(0.95 0.05 60);
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.15 0 0);
-}
-
-.dark {
-  /* Dark mode - Deep charcoal with vibrant accents */
-  --primary: oklch(0.65 0.25 25);
-  --secondary: oklch(0.25 0.03 60);
-  --background: oklch(0.12 0 0);
-  --foreground: oklch(0.95 0 0);
-}
-```
-
-**Why oklch()?** It provides perceptually uniform colors that look consistent across different lightness levels - perfect for dark mode!
-
-### Custom Utility Classes
-
-We added custom CSS utilities for that modern tech blog feel:
-
-```css
-/* Gradient text effect */
-.gradient-text {
-  @apply bg-gradient-to-r from-primary via-purple-500 to-pink-500 
-         bg-clip-text text-transparent;
-}
-
-/* Frosted glass effect */
-.glass {
-  @apply backdrop-blur-md bg-background/50 border border-border/50;
-}
-
-/* Card hover animation */
-.card-hover {
-  @apply transition-all duration-300 hover:shadow-lg 
-         hover:shadow-primary/10 hover:-translate-y-1;
-}
-```
-
-## Step 3: Header Redesign
-
-The navigation header got a complete makeover with:
-
-**Frosted Glass Effect**:
-```tsx
-<header className="sticky top-0 z-50 w-full border-b border-border/40 
-                   backdrop-blur-xl bg-background/80 shadow-sm">
-```
-
-**Theme Toggle Integration**:
-We integrated `next-themes` for seamless dark/light mode switching with a custom ThemeToggle component.
-
-**Animated Navigation Links**:
-```tsx
-<Link 
-  href="/about" 
-  className="transition-colors hover:text-primary relative 
-             after:absolute after:bottom-0 after:left-0 after:h-0.5 
-             after:w-0 after:bg-primary after:transition-all 
-             hover:after:w-full"
->
-  About
-</Link>
-```
-
-## Step 4: Enhanced Components
-
-### Hero Section
-
-The hero section got major upgrades:
-
-1. **Gradient Background Effect** - Subtle animated background with custom clip paths
-2. **Text Animation Effects** - Smooth fade-in blur animations using TextEffect component
-3. **Enhanced Button Styling** - Buttons with shadow effects and hover animations
-
-### Blog Post Cards
-
-The post listing page features modern card designs with:
-- Featured images with zoom effects on hover
-- Gradient badges for tags
-- Author avatars and metadata
-- Smooth transition animations
-
-## Step 5: Personalization
-
-### Site Branding
-
-We updated the global configuration with:
-- Site name: "Tales of Hark"
-- Custom icon: BiBookHeart in red
-- Social media links (Twitter, GitHub, LinkedIn, YouTube)
-- "Powered by TinaCMS" footer credit
-
-### Custom Favicon
-
-We created custom favicons using Next.js's dynamic icon generation with a red gradient "H" logo.
-
-### Home Page Content
-
-Updated the hero section with personal tagline:
-
-```yaml
-headline: Harkirat Singh
-tagline: |
-  I cook with TinaCMS (the best CMS)
-  & build great software at SSW
-```
-
-## Step 6: The Red Theme
-
-We chose a vibrant red and amber color scheme for energy and warmth:
-
-**Light Mode**:
-- Primary: `oklch(0.55 0.22 25)` - Vibrant red
-- Secondary: `oklch(0.95 0.05 60)` - Subtle amber
-- Background: `oklch(0.99 0 0)` - Clean white
-
-**Dark Mode**:
-- Primary: `oklch(0.65 0.25 25)` - Brighter red for contrast
-- Secondary: `oklch(0.25 0.03 60)` - Deep amber
-- Background: `oklch(0.12 0 0)` - Deep charcoal
-
-This creates a warm, energetic palette perfect for a tech blog!
-
-## Step 7: About Page
-
-Created a comprehensive about page with:
-- Personal bio and journey through FireBootCamp at SSW
-- Technical expertise (Flutter, Firebase, Supabase, Angular, .NET, DevOps, Web3)
-- Personal interests (YouTube channel, tabla playing, love for conversation)
-
-## 🎯 Key Takeaways
-
-**What Worked Well**:
-1. **TinaCMS** - Visual editing is amazing for content management
-2. **GitHub Copilot** - Accelerated development with smart suggestions
-3. **Next.js 15 + Turbopack** - Lightning-fast compilation and hot reload
-4. **Tailwind CSS v4** - Powerful utility-first styling with custom properties
-5. **oklch() colors** - Consistent colors across light/dark modes
-
-**Pro Tips**:
-- Use YAML multiline syntax (`|`) for multi-line text fields
-- Leverage CSS custom properties for theme consistency
-- Add transition animations for better UX
-- Test both light and dark modes thoroughly
-- Keep color contrast ratios accessible (WCAG AA)
-
-## 🚀 Next Steps
-
-Want to build your own? Here's what to do next:
-
-1. **Clone and Customize**: Start with the TinaCMS starter
-2. **Design Your Theme**: Pick your color scheme and aesthetic
-3. **Add Your Content**: Write your first blog post
-4. **Deploy**: Push to Vercel, Netlify, or your preferred host
-5. **Connect TinaCloud**: Enable visual editing for non-technical users
-
-## 📚 Resources
-
-- [TinaCMS Documentation](https://tina.io/docs/)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com)
-- [oklch() Color Space](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
-
----
-
-**Building a blog has never been this fun!** With TinaCMS and GitHub Copilot, you can vibe code your way to a production-ready blog in hours, not days. The combination of visual editing, modern styling, and AI-assisted development makes it an absolute joy to build.
-
-Ready to start your own blogging journey? Let's vibe code! 🎉
-
----
-
-*Have questions or want to share your own TinaCMS blog? Hit me up on [Twitter](https://twitter.com/talesofhark) or check out my [YouTube channel](https://www.youtube.com/@talesofhark) for more tutorials!*
+* [TinaCMS Documentation](https://tina.io/docs/)
+* [Next.js Documentation](https://nextjs.org/docs)
+* [GitHub Copilot](https://github.com/features/copilot)
+* [oklch() Color Space](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl)
+
+***
