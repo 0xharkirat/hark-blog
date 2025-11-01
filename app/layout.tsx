@@ -26,8 +26,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Tina",
-  description: "Tina Cloud Starter",
+  title: "Tales of Hark",
+  description: "Personal blog by Harkirat Singh - Cooking with TinaCMS & building great software at SSW",
 };
 
 export default function RootLayout({
