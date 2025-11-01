@@ -11,14 +11,14 @@ import { components } from '@/components/mdx-components';
 import ErrorBoundary from '@/components/error-boundary';
 
 const titleColorClasses = {
-  blue: 'from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500',
-  teal: 'from-teal-400 to-teal-600 dark:from-teal-300 dark:to-teal-500',
-  green: 'from-green-400 to-green-600',
-  red: 'from-red-400 to-red-600',
-  pink: 'from-pink-300 to-pink-500',
-  purple: 'from-purple-400 to-purple-600 dark:from-purple-300 dark:to-purple-500',
-  orange: 'from-orange-300 to-orange-600 dark:from-orange-200 dark:to-orange-500',
-  yellow: 'from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-500',
+  blue: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
+  teal: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
+  green: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
+  red: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
+  pink: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
+  purple: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
+  orange: 'from-primary to-orange-600 dark:from-primary dark:to-orange-500',
+  yellow: 'from-primary to-red-600 dark:from-primary dark:to-red-500',
 };
 
 interface ClientPostProps {
@@ -105,7 +105,7 @@ export default function PostClientPage(props: ClientPostProps) {
             </div>
           </div>
         )}
-        <div data-tina-field={tinaField(post, '_body')} className='prose dark:prose-dark w-full max-w-none'>
+        <div data-tina-field={tinaField(post, '_body')} className='prose prose-lg dark:prose-invert w-full max-w-4xl mx-auto prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-pre:bg-muted prose-a:text-primary hover:prose-a:text-primary/80'>
           <TinaMarkdown
             content={post._body}
             components={{
