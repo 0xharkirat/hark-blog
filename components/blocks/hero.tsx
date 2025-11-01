@@ -59,27 +59,60 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
   return (
     <Section background={data.background!}>
-      <div className='text-center sm:mx-auto lg:mr-auto lg:mt-0'>
+      <div className='relative text-center sm:mx-auto lg:mr-auto lg:mt-0 py-20 md:py-32'>
+        {/* Gradient background effect */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+            <div
+              className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-primary to-purple-600 opacity-20"
+              style={{
+                clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              }}
+            />
+          </div>
+        </div>
+
         {data.headline && (
-          <div data-tina-field={tinaField(data, 'headline')}>
-            <TextEffect preset='fade-in-blur' speedSegment={0.3} as='h1' className='mt-8 text-balance text-6xl md:text-7xl xl:text-[5.25rem]'>
+          <div data-tina-field={tinaField(data, 'headline')} className="mb-6">
+            <TextEffect 
+              preset='fade-in-blur' 
+              speedSegment={0.3} 
+              as='h1' 
+              className='text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl xl:text-8xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text'
+            >
               {data.headline!}
             </TextEffect>
           </div>
         )}
         {data.tagline && (
-          <div data-tina-field={tinaField(data, 'tagline')}>
-            <TextEffect per='line' preset='fade-in-blur' speedSegment={0.3} delay={0.5} as='p' className='mx-auto mt-8 max-w-2xl text-balance text-lg'>
+          <div data-tina-field={tinaField(data, 'tagline')} className="mt-8">
+            <TextEffect 
+              per='line' 
+              preset='fade-in-blur' 
+              speedSegment={0.3} 
+              delay={0.5} 
+              as='p' 
+              className='mx-auto max-w-2xl text-balance text-xl md:text-2xl text-muted-foreground font-light'
+            >
               {data.tagline!}
             </TextEffect>
           </div>
         )}
 
-        <AnimatedGroup variants={transitionVariants} className='mt-12 flex flex-col items-center justify-center gap-2 md:flex-row'>
+        <AnimatedGroup variants={transitionVariants} className='mt-12 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6'>
           {data.actions &&
             data.actions.map((action) => (
-              <div key={action!.label} data-tina-field={tinaField(action)} className='bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5'>
-                <Button asChild size='lg' variant={action!.type === 'link' ? 'ghost' : 'default'} className='rounded-xl px-5 text-base'>
+              <div key={action!.label} data-tina-field={tinaField(action)} className='group'>
+                <Button 
+                  asChild 
+                  size='lg' 
+                  variant={action!.type === 'link' ? 'ghost' : 'default'} 
+                  className={`rounded-xl px-8 py-6 text-lg font-medium transition-all ${
+                    action!.type !== 'link' 
+                      ? 'shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-105' 
+                      : 'hover:bg-muted'
+                  }`}
+                >
                   <Link href={action!.link!}>
                     {action?.icon && <Icon data={action?.icon} />}
                     <span className='text-nowrap'>{action!.label}</span>

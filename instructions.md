@@ -144,6 +144,44 @@ All three steps have been completed successfully:
 
 ---
 
+## 👤 Personalization Updates
+
+### Completed Personalization ✅
+
+**1. Home Page Hero Section**
+- Clean, minimal hero with name: "Harkirat Singh"
+- Tagline: "I cook with TinaCMS (the best CMS) & build great software at SSW"
+- Removed all other sections (stats, features, testimonials, CTA)
+- Enhanced hero design with:
+  - Gradient background effect
+  - Larger, bolder typography
+  - Improved button styling with shadows and hover effects
+  - Better spacing and layout
+
+**2. Header/Navigation**
+- Updated site name to "Harkirat Singh"
+- Kept navigation: Home, About, Blog
+- Added theme toggle button
+
+**3. Footer Social Links**
+- Twitter: [@talesofhark](https://x.com/talesofhark)
+- LinkedIn: [talesofhark](https://www.linkedin.com/in/talesofhark)
+- GitHub: [0xharkirat](https://github.com/0xharkirat)
+- YouTube: [@talesofhark](https://www.youtube.com/@talesofhark)
+
+**4. Site Structure**
+- Home page: Clean hero section only
+- Navigation bar: Present with your name and links
+- Footer: Present with your social media links
+- Layout: Minimal and focused on content
+
+### Files Modified:
+- `/content/pages/home.mdx` - Simplified to hero section only
+- `/content/global/index.json` - Updated name and social links
+- `/components/blocks/hero.tsx` - Enhanced hero design
+
+---
+
 ## Reference Information
 
 ### TinaCMS Documentation
